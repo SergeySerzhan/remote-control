@@ -55,6 +55,22 @@ class Controller {
       Controller.moveMousePushed((cord.x - newR) + newR * Math.cos(i), cord.y + newR * Math.sin(i));
     }
   }
+
+  drawRect(w: number, h: number): void {
+    const cord = Controller.getCordObj();
+
+    let newW = w;
+    let newH = h;
+
+    // Check if rectangle fit in borders of screen and if it isn't => set new width and height
+    if (cord.y + h > cord.height) newH = cord.height - cord.y;
+    if(cord.x - w < 0) newW = cord.x;
+
+    Controller.moveMousePushed(cord.x, cord.y + newH);
+    Controller.moveMousePushed(cord.x - newW, cord.y + newH);
+    Controller.moveMousePushed(cord.x - newW, cord.y);
+    Controller.moveMousePushed(cord.x, cord.y);
+  }
 }
 
 export default new Controller();

@@ -6,5 +6,6 @@ export const cmds: {[key: string]: any} = {
   mouse_left: Controller.moveMouseLeft,
   mouse_right: Controller.moveMouseRight,
   mouse_position: Controller.getMouseCord,
-  draw_circle: Controller.drawCircle
+  draw_circle: Controller.drawCircle,
+  draw_rectangle: Controller.drawRect
 }
